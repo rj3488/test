@@ -9,6 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="testFlow" doc:id="fb870041-087a-46e8-887a-9ed596a4a613" >
 		<http:listener doc:name="Listener" doc:id="5c169ef8-369b-4dd4-9d98-9d7166ea59c0" config-ref="HTTP_Listener_config" path="/git"/>
-		<logger level="INFO" doc:name="Logger" doc:id="683c916a-6c1c-4f00-9949-42b2a284c1e6" message="Sample GIT"/>
+		<set-payload value='#["project"]' doc:name="Set Payload" doc:id="b399a706-fcb4-4367-8352-449b6bcb0a46" />
+		<logger level="INFO" doc:name="Logger" doc:id="683c916a-6c1c-4f00-9949-42b2a284c1e6" message="Sample GIT #[payload]"/>
 	</flow>
 </mule>
